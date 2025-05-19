@@ -1,0 +1,11 @@
+[Unit]
+Description=Beeppp coletor
+
+[Service]
+ExecStart=/opt/bee/beeppp/venv/bin/python /opt/bee/beeppp/agente-beesoft-ppp-coletor.py
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=default.target

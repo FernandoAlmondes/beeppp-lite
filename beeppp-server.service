@@ -1,0 +1,13 @@
+[Unit]
+Description=Beeppp server
+Requires=network.target mysql.service
+After=network.target mysql.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/bee/beeppp
+ExecStart=/opt/bee/beeppp/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/beeppp-server.sock beesoft.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

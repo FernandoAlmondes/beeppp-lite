@@ -1,0 +1,8 @@
+[Unit]
+Description=Beeppp socket
+
+[Socket]
+ListenStream=/run/beeppp-server.sock
+
+[Install]
+WantedBy=sockets.target
