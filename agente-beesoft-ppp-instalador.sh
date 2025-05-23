@@ -12,7 +12,7 @@ echo "--------------------------------------------------------------------------
 
 # Instalacao das dependencias do Linux para o beeppp
 apt update
-apt install -y default-mysql-server nginx build-essential libtool pkg-config git python3.11-venv python3.11 python3.11-dev default-libmysqlclient-dev sudo libpq-dev uuid
+apt install -y default-mysql-server nginx build-essential libtool pkg-config wget net-tools git python3.11-venv python3.11 python3.11-dev default-libmysqlclient-dev sudo libpq-dev uuid
 
 token_api=$(uuid)
 senha_bd_beepppadmin=$(uuid)
