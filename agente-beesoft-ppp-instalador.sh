@@ -114,7 +114,7 @@ chmod +x /opt/bee/beeppp/agente-beesoft-*
 (crontab -l 2>/dev/null; echo "0 4 * * * /opt/bee/beeppp/venv/bin/python /opt/bee/beeppp/agente-beesoft-removedor-de-duplicados.py >> /opt/bee/beeppp/logs/log_agente-beesoft-removedor-de-duplicados.txt") | crontab -
 (crontab -l 2>/dev/null; echo "0 4 * * * /opt/bee/beeppp/venv/bin/python /opt/bee/beeppp/agente-beesoft-removedor-de-offlines.py >> /opt/bee/beeppp/logs/log_agente-beesoft-removedor-de-offlines.txt") | crontab -
 (crontab -l 2>/dev/null; echo "0 5 * * * /opt/bee/beeppp/venv/bin/python /opt/bee/beeppp/agente-beesoft-removedor-de-historico.py >> /opt/bee/beeppp/logs/log_agente-beesoft-removedor-de-historico.txt") | crontab -
-(crontab -l 2>/dev/null; echo "0 5 * * * find /opt/bee/beeppp/tmp/ -mtime 1 -type f -exec ls -larth {} \; >> /opt/bee/beeppp/logs/log_agente-beesoft-removedor-de-arquivos.txt") | crontab -
+(crontab -l 2>/dev/null; echo "0 5 * * * find /opt/bee/beeppp/tmp/ -mtime 1 -type f -exec rm {} \; >> /opt/bee/beeppp/logs/log_agente-beesoft-removedor-de-arquivos.txt") | crontab -
 
 }
 
@@ -124,9 +124,9 @@ apt-get install -y adduser libfontconfig1 musl
 
 cd /tmp
 
-wget https://dl.grafana.com/enterprise/release/grafana-enterprise_12.0.0_amd64.deb
+wget https://dl.grafana.com/grafana-enterprise/release/12.1.1/grafana-enterprise_12.1.1_16903967602_linux_amd64.deb
 
-dpkg -i /tmp/grafana-enterprise_12.0.0_amd64.deb
+dpkg -i /tmp/grafana-enterprise_12.1.1_16903967602_linux_amd64.deb
 
 /bin/systemctl daemon-reload
 /bin/systemctl enable grafana-server
